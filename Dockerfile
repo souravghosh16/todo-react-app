@@ -7,7 +7,7 @@ FROM node:alpine AS builder
 # Installing dependencies
 COPY . .
 
-RUN npm install --force
+RUN npm install
 
 
 # Building our application
