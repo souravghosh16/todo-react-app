@@ -2,23 +2,10 @@
 FROM node:alpine AS builder
 
 
-# Setting up the work directory
+WORKDIR /usr/src/app
 
-# Installing dependencies
-COPY . .
-
-RUN npm install
-
-
-# Building our application
-RUN npm run build
-
-# Fetching the latest nginx image
-FROM nginx
-
-# Copying built assets from builder
-COPY --from=builder /build /usr/share/nginx/html
-
-# Copying our nginx.conf
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
 
