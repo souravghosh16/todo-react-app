@@ -1,4 +1,4 @@
-import reducer from './reducer/reducers';
+import reducer from './reducer/counter';
 import user from './reducer/user';
 
 
