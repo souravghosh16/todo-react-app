@@ -1,14 +1,19 @@
 
+import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
+import { increment, decrement } from './reducers';
 
 function App() {
+  const count = useSelector((state) => state.reducer.value);
+  const {name, address} = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
   return (
-    <div className="App">
-      Hi There!
-      <div data-test="bar">Ki go</div>
-      <div className='bar'>Ki go class</div>
-      <div id='bar'>Ki go id</div>
-    </div>
+      <div>
+          <h1>Count: user{count} {name} {address} </h1>
+          <button onClick={() => dispatch(increment())}>+</button>
+          <button onClick={() => dispatch(decrement())}>-</button>
+      </div>
   );
 }
 
