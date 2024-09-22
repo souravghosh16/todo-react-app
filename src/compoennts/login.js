@@ -12,6 +12,7 @@ const Login = () => {
   const [input, setInput] = useState({
     username: "",
     password: "",
+    gender: "",
   });
 
   const onSubmit = (data) => console.log(data)
