@@ -13,6 +13,8 @@ const Login = () => {
     username: "",
     password: "",
     gender: "",
+    addresss: "",
+    postcode: "",
   });
 
   const onSubmit = (data) => console.log(data)
